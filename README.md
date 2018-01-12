@@ -1,6 +1,6 @@
 # RemindMe
 
-RemindMe was a service/website (www.remindme.cc) I launch in 2002 and eventually took down around 2007. 
+RemindMe was a service/website (www.remindme.cc) I launched in 2002 and eventually took down around 2007. 
 
 The idea was that users could create/edit/receive reminders through instant messaging. In other words, someone could send an IM to a bot such as:
 
