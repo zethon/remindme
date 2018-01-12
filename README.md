@@ -1,4 +1,4 @@
-# remindme
+# RemindMe
 
 RemindMe was a website (www.remindme.cc) I started around 2002 and eventually took down around 2007. The idea was that users would send an IM to bot in the form of:
 
