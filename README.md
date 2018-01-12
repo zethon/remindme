@@ -1,18 +1,24 @@
 # RemindMe
 
-RemindMe was a website (www.remindme.cc) I started around 2002 and eventually took down around 2007. The idea was that users would send an IM to bot in the form of:
+RemindMe was a service/website (www.remindme.cc) I launch in 2002 and eventually took down around 2007. 
+
+The idea was that users could create/edit/receive reminders through instant messaging. In other words, someone could send an IM to a bot such as:
 
 `remind me tomorrow at 7pm to take out the trash`
 
 And then the following day the user would get a message from the bot saying `take out the trash`. 
 
+The service supported AOL Instant Messenger (RIP), YahooIM and MSN. Users could manage their reminders directly through the bot or on the website. Also, users could add friends so that they could send users to each other (i.e. "`remind anthony next tuesday to call his mom`").
+
 ## Design
 
-The website was written in PHP with a MySQL database. 
+The website was written in PHP with a MySQL database and is in the `/www` folder. 
 
-The backend was originally implemented entirely in Perl. This was difficult to maintain as the multithreaded nature of the backend proved problematic. This could have been the result of my code (likely), my old/slow hardware (also likley), or Perl's multithreaded support at the time (maybe). 
+The backend was ran on a computer hosted in my house. Since the computer only needed connections to the IM services and the website's database, it was easy enough to use my broadband conneciton at home. 
 
-I rewrote the backend in C# using a locally hosted Perl REST service to do some of the text parsing. This was mostly because of a library in Perl (whose name I can't recall right now) that did real language parsing of dates. In other words you could pass it: `tuesday 4pm` and the library would return you an epoch timestamp. At the time there was a project called Perl.NET that would compile Perl code to .NET, but it was relatively new and didn't work too well. As a result I implemented a simple REST service which my C# code could invoke to get a timestamp.
+The original server was written entirely in Perl (and can be viewed in the `/old_server` folder). However, this version was difficult to maintain since the multithreaded nature of the backend proved problematic. This could have been the result of my code (likely), my old/slow hardware (also likley), or Perl's multithreaded support at the time (maybe). 
+
+I rewrote the backend in C# using a locally hosted Perl REST service (`/server`) to do some of the text parsing. This was mostly because of a library in Perl (whose name I can't recall right now) that did real language parsing of dates. In other words you could pass it: `tuesday 4pm` and the library would return you an epoch timestamp. At the time there was a project called Perl.NET that would compile Perl code to .NET, but it was relatively new and didn't work too well. As a result I implemented a simple REST service (`/server/mpserver`) which my C# code (`/server/RemServer`) could invoke to get a timestamp.
 
 ## The End
 
