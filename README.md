@@ -1,6 +1,6 @@
 # RemindMe
 
-RemindMe was a service/website (www.remindme.cc) I launched in 2002 and eventually took down around 2007. 
+RemindMe was a service/website (www.remindme.cc) I launch in 2002 and eventually took down around 2007. 
 
 The idea was that users could create/edit/receive reminders through instant messaging. In other words, someone could send an IM to a bot such as:
 
@@ -8,7 +8,11 @@ The idea was that users could create/edit/receive reminders through instant mess
 
 And then the following day the user would get a message from the bot saying `take out the trash`. 
 
-The service supported AOL Instant Messenger (RIP), YahooIM and MSN. Users could manage their reminders directly through the bot or on the website. Also, users could add friends so that they could send users to each other (i.e. "`remind anthony next tuesday to call his mom`").
+Features included:
+
+* Support for AOL Instant Messenger (RIP), YahooIM and MSN Messenger
+* Repeating reminders (i.e. "`remind me every tuesday to take out the trash`")
+* Sending reminders to friends (i.e. "`remind anthony next tuesday to call his mom`")
 
 ## Design
 
