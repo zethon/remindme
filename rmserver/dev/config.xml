@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<serverconfig>
+  <dbmanager>
+    <type>WebServiceDBConfig</type>
+    <version>0.1</version>
+    <URL>http://www.remindme.cc/service.php</URL>
+    <botname>ciqo</botname> <!-- legacy stuff! -->
+  </dbmanager>
+
+
+  <messageparser>
+		<uri>http://localhost</uri>
+		<port>8080</port>
+	</messageparser>
+	
+	<services>
+		<service name="aim">
+			<interface>C:\scratch\ConsoleApplication1\ClassLibrary1\bin\Debug\ClassLibrary1.dll</interface>
+		</service>
+		
+		<service name="toc2">
+			<interface>C:\scratch\ConsoleApplication1\dotTOC2\bin\Debug\dotTOC2.dll</interface>
+		</service>
+		
+		<service name="msn">
+			<interface>C:\scratch\ConsoleApplication1\ClassLibrary2\bin\Debug\ClassLibrary2.dll</interface>
+		</service>
+		
+		<service name="email">
+			<interface>C:\scratch\ConsoleApplication1\ClassLibrary2\bin\Debug\ClassLibrary2.dll</interface>
+		</service>
+	</services>
+	
+	<bots>
+		<bot name="aim1">
+			<servicetype>aim</servicetype>
+			<login>ciqo</login>
+			<password></password>
+			<server>login.messaging.aol.com</server>
+			<port>5190</port>
+		</bot>
+		
+		<bot name="aim2">
+			<servicetype>toc2</servicetype>
+			<login>i3e9</login>
+			<password></password>
+			<server>login.messaging.aol.com</server>
+		</bot>
+		
+		<bot name="msn1">
+			<servicetype>msn</servicetype>
+			<login>remindmebot0002@hotmail.com</login>
+			<password></password>
+			<server>messenger.hotmail.com</server>
+			<port>1863</port>
+		</bot>
+		
+		<bot name="email1">
+			<servicetype>email</servicetype>
+			<login>remindmebot0002@remindme.cc</login>
+			<password></password>
+			<server>remindme.cc</server>
+			<port>25</port>
+		</bot>		
+	</bots>
+
+</serverconfig>

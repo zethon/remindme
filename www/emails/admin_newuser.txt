@@ -1,0 +1,11 @@
+New User Registered
+
+USERID: %userid%
+EMAIL: %email%
+
+sendmail returned (%emailret%).
+
+This user has been assigned to %botname%.
+
+
+

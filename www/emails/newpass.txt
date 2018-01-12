@@ -1,0 +1,10 @@
+Hello %userid%,
+
+Your RemindMe password has been changed.
+
+The new password is: %newpass%
+
+You can change this password by selecting "change password" after you log into the website.
+
+Thank you,
+- RemindMe Staff

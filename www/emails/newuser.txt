@@ -1,0 +1,46 @@
+Hello %userid%,
+
+Welcome to RemindMe!
+
+To start using RemindMe, please add the following screen names to the your
+buddy list(s).
+
+AIM: %aimbot%
+MSN: %msnbot%
+ICQ: %icqbot%
+YAHOO: %yahoobot%
+EMAIL: %emailbot%
+
+When sending emails to your RemindMe bot, please include your reminder on
+the subject line of the email. For security reasons, RemindMe will
+only read an email's subject line and not the entire body.
+
+Please remember your username: %userid%
+
+If your reminders are not being delivered, please login at http://www.remindme.cc 
+and make sure that you have a properly set your contact screen names. The most 
+common examples of invalid screen names are:
+
+* AOL Instant Messenger: using your full Internet email address
+correct: bobsmith123
+incorrect: bobsmith123@aol.com
+
+* MSN - using you user nickname instead of your passport email address
+correct: user@hotmail.com
+incorrect: superfly
+
+* ICQ - adding non-numeric digits to your ICQ number
+correct: 1234567
+incorrect: +1234567
+
+To reach RemindMe's customer support squad, send email to support@remindme.cc. 
+
+We're always happy to hear your comments, insights, and suggestions. Feel free to contact 
+us anytime by sending email to support@remindme.cc or you can check the RemindMe users 
+forum at: http://forum.remindme.cc/
+
+Thanks again for joining RemindMe!
+
+All the best,
+
+- Team RemindMe 

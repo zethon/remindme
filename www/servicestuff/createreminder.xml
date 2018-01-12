@@ -1,0 +1,12 @@
+<request>
+	<function>
+		<name>CreateReminder</name>
+		<argument>zethon_user</argument>
+		<argument>zethon_user</argument>
+		<argument>2009-11-22 17:25:12Z</argument>
+		<argument>2009-11-22 17:25:12</argument>
+		<argument>This is the message reminder</argument>
+		<argument>0</argument>
+		<argument>tester1</argument>
+	</function>
+</request>

@@ -1,0 +1,84 @@
+/* CSS Document */
+div.calendar {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-style: normal;
+	background-color: #DBDFE3;
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:150px;
+	height:auto;
+	z-index:1;
+	cursor: hand;
+	visibility: hidden;
+	border: 1px solid #000000;
+	filter: progid:DXImageTransform.Microsoft.Fade(Duration=0.2);
+}
+table.calendar {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #000033;
+	border: none;
+	width:100%;
+	cursor: hand;
+}
+td.day {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	border: 1px solid #000033;
+	width: 14%;
+	text-align: center;
+	cursor : pointer;
+}
+td.day_out {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	border: 1px solid #333333;
+	width: 14%;
+	text-align: center;
+	color: gray;
+	background-color: #E8EDE7;
+	cursor : pointer;
+}
+td.day_c {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	border: 1px solid #333333;
+	width: 14%;
+	text-align: center;
+	color: white;
+	background-color: black;
+	cursor : pointer;
+}
+td.wd {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	border: 1px none #000033;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #006666;
+	font-variant: small-caps;
+	text-align: center;
+	width: 14%;
+	cursor : pointer;
+}
+td.closew {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	border: 1px none #000033;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: black;
+	font-variant: small-caps;
+	text-align: center;
+	width: 14%;
+	cursor : pointer;
+}
+td.nav {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #000033;
+	border: none;
+	cursor: pointer;
+}

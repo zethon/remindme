@@ -1,0 +1,13 @@
+advertisement:
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+
+We did not see you IM so we are sending you this Reminder via email:
+
+%REMINDER%
+
+- The RemindMe Team
+www.remindme.cc
+
+%ADVERTISEMENT%

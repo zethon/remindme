@@ -1,0 +1,109 @@
+*{padding: 0; margin: 5; margin-top: 10px; margin-bottom: 10px;}  
+
+html,body 
+{
+	margin:0; 
+	padding:0; 
+	font:12px verdana; 
+	text-align: center;
+}	
+
+#outerContainer 
+{ 
+	margin:0 auto; 
+	padding:0; 
+	min-width: 965px;
+	max-width: 965px;
+	
+	/*min-width: 760px; 
+	max-width: 760px; 
+	min-height: 400px; */
+}
+
+#innerContainer
+{
+	padding: 0px;
+}
+
+#toptable
+{
+	background-image: url(images/top-background.png); 
+	background-repeat: no-repeat;
+	height: 89px;
+}
+
+#middletable
+{
+	padding-left: 30px;
+	padding-right: 30px;
+	background-image: url(images/middle-background.png); 
+}
+
+#bottomtable
+{
+	background-repeat: no-repeat;
+	background-image: url(images/bottom-background.png); 
+}
+
+#menuItems,a:link, a:visited
+{
+	text-decoration: none;
+	
+	text-align: left;
+	color: #ffffff;
+	font-weight: bold;
+	background-color:#666699;
+	padding: 5px;
+}
+
+a:hover
+{
+	text-decoration: underline;
+}
+
+#menuLoginButton
+{
+	text-align: right;
+	color: #ffffff;
+	font-weight: bold;
+	background-color: #666699;
+	padding: 5px;
+}
+
+#sideMenu
+{
+	vertical-align: top;
+	width: 125px;
+}
+
+#mainContent
+{
+	vertical-align: top;
+}
+
+.largeText
+{
+	font-weight: bold;
+	font-size: 15px;
+}
+
+#sampleBox
+{
+	color: #38295F; 
+	background-color: #E4E2E2;
+	list-style-position:inside;
+	padding-left: 5px;
+}
+
+form.login_form
+{
+  position: absolute;
+  visibility: hidden;
+
+  border:  1px solid black;
+  padding: 0px 5px 0px 5px;
+
+  background: #CCCCCC;
+  height: 140px;
+  width: 225px;
+}

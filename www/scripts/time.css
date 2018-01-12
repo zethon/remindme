@@ -1,0 +1,48 @@
+/* CSS Document */
+div.time {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	font-style: normal;
+	background-color: #DBDFE3;
+	position:absolute;
+	width:150px;
+	height:auto;
+	z-index:1;
+	cursor: hand;
+	visibility: hidden;
+	border: 1px solid #000000;
+	filter:revealTrans() progid:DXImageTransform.Microsoft.dropshadow(OffX=5, OffY=5, Color='#aeaeae', Positive='true') ;
+}
+table.time {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #000033;
+	border: none;
+	width:100%;
+	cursor: hand;
+}
+td.time {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	border: 1px solid #000033;
+	text-align: center;
+}
+td.closew {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	border: 1px none #000033;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: black;
+	font-variant: small-caps;
+	text-align: center;
+	width: 20%;
+	cursor: hand;
+}
+
+.select {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	border: 1px none #000033;
+	color: #000000;
+}

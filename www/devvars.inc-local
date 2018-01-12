@@ -1,0 +1,401 @@
+<?
+error_reporting(E_ALL & ~E_NOTICE);
+
+define("PLAN_FREE",0);
+define("BASIC",1);
+define("BASIC_PLUS",2);
+define("PLAN_BETA_USER", 100);
+define("PLAN_ADMIN", 255);
+
+$support_email = "support@remindme.cc";
+$info_email = "remindme@zethon.net";
+$reg_notify_email = "remindme@zethon.net";
+$default_plan = 100;
+
+$prio_array = array( 'first','second', 'third' );
+
+//$dbhost="www.zethon.net";
+$dbhost = "localhost";
+$dbuser="remindme_user";
+$dbpw="";
+$dbname="remindme_reminder";
+
+
+function UserLogin($user,$password)
+{
+	global $key,$dbname,$dbuser,$dbpw,$dbhost;
+	
+	$user = trim(stripslashes($user));
+	$password = trim(stripslashes($password));
+	
+	mysql_connect($dbhost,$dbuser,$dbpw);
+	@mysql_select_db($dbname) or die("(Unable to select database [$dbname])");
+	
+	$query="SELECT * FROM system_users WHERE (id='".$user."')";
+	$result=mysql_query($query);
+	$num=mysql_numrows($result);	
+	
+	if ($num > 0)
+	{
+		
+		$storedpw = mysql_result($result,0,"password");
+		
+		if ($storedpw == md5($password))
+		{
+			mysql_close();
+			return 1;
+		}
+		else
+		{
+			mysql_close();
+			return 0;
+		}
+	}
+	else
+	{
+		mysql_close();
+		return 0;
+	}	
+}
+
+function VerifyUser($user,$encpw)
+{
+	global $dbname,$dbuser,$dbpw,$dbhost;
+	
+	$user = trim(stripslashes($user));
+	$encpw = trim(stripslashes($encpw));
+	
+	mysql_connect($dbhost,$dbuser,$dbpw);
+	@mysql_select_db($dbname) or die("VerifyUser() Unable to select database [$dbname]");
+	
+	$query="SELECT * FROM system_users WHERE (id='".$user."')";
+	$result=mysql_query($query);
+	$num=mysql_numrows($result);	
+	
+	if ($num == 0)
+	{
+		return 0;
+	}
+	
+	$storedpw = mysql_result($result,0,"password");
+	
+	mysql_close();
+	return ($storedpw == $encpw);
+}
+
+function GetUserHash($user)
+{
+	global $dbname,$dbuser,$dbpw,$dbhost;
+		
+	mysql_connect($dbhost,$dbuser,$dbpw);
+	@mysql_select_db($dbname) or die("(GetUserHash() Unable to select database [$dbname])");
+	
+	$query="SELECT * FROM system_users WHERE (id='".$user."')";
+	$result=mysql_query($query);
+	$num=mysql_numrows($result);	
+	
+	if ($num == 0)
+	{
+		mysql_close();
+		return 0;
+	}
+	
+	$retval{'id'} = $user;
+	$retval{'bot'} = mysql_result($result,0,"bot");
+	$retval{'class'} = mysql_result($result,0,"class");
+	$retval{'email'} = mysql_result($result,0,"email");
+	$retval{'firstname'} = mysql_result($result,0,"firstname");
+	$retval{'surname'} = mysql_result($result,0,"surname");
+	$retval{'aimname'} = mysql_result($result,0,"aim_name");
+	$retval{'msnname'} = mysql_result($result,0,"msn_name");
+	$retval{'icqname'} = mysql_result($result,0,"icq_name");
+	$retval{'timezone'} = mysql_result($result,0,"timezone");
+	$retval{'plan'} = mysql_result($result,0,"plan");
+	$retval{'contact-order'} = mysql_result($result,0,"contact_order");
+	
+	mysql_close();
+	return $retval;
+}
+
+function GetBotHash($botname)
+{
+	global $dbname,$dbuser,$dbpw,$dbhost;
+		
+	mysql_connect($dbhost,$dbuser,$dbpw);
+	@mysql_select_db($dbname) or die("(GetBotHash() Unable to select database [$dbname])");
+	
+	$query="SELECT * FROM system_bots WHERE (name='".$botname."')";
+	$result=mysql_query($query);
+	$num=mysql_numrows($result);	
+	
+	if ($num == 0)
+	{
+		mysql_close();
+		return 0;
+	}
+	
+	$retval{'name'} = $botname;
+	$retval{'users'} = mysql_result($result,0,"users");
+	$retval{'aimname'} = mysql_result($result,0,"aim_name");
+	$retval{'msnname'} = mysql_result($result,0,"msn_name");
+	$retval{'icqname'} = mysql_result($result,0,"icq_name");
+
+	mysql_close();
+	return $retval;	
+}
+
+function ReplaceInFile($filename,$hash)
+{
+	// read the file
+	$file_handle = fopen($filename,"r");
+	$file_contents = fread($file_handle, filesize($filename));
+	fclose($file_handle);  
+	
+	while (list($key,$value) = each($hash))
+	{
+		$file_contents = str_replace($key, $value, $file_contents);
+	}
+	return $file_contents;	
+}
+
+function SafeQueryData($query)
+{
+	$query = preg_replace( "/'/", "\\'", $query );		
+	return $query;
+}
+
+function SafeFormData($data)
+{
+	$data = preg_replace( "/'/", "''", $data );		
+	return $data;	
+}
+
+function makeRandomPassword() {
+  $salt = "ABCDEFGHIJKLMNOPQRSTUVWXYZabchefghjkmnpqrstuvwxyz0123456789";
+  srand((double)microtime()*1000000); 
+  	$i = 0;
+  	while ($i <= 7) {
+    		$num = rand() % 59;
+    		$tmp = substr($salt, $num, 1);
+    		$pass = $pass . $tmp;
+    		$i++;
+  	}
+  	return $pass;
+}
+
+
+function LogEvent($event,$user="")
+{
+	if ($user == "")
+	{
+		if ($_COOKIE[username] == "")
+		{
+			$user = "ANONYMOUS";
+		}
+		else
+		{
+			$user = $_COOKIE[username];
+		}
+	}
+
+	$time = time();
+	$month = date("M");
+	$day = date("d");
+	$year = date("Y");
+	$filename = "$year$month$day.log";
+	$fp = fopen("logs/$filename","a");
+	fwrite($fp,date("M dS Y H:i:s",time()).":$event:$user:$_SERVER[REMOTE_ADDR]\n");
+	fclose($fp);  		
+	
+}
+
+
+// increments the reminder count and returns the value
+function pingReminderCount()
+{
+	global $dbname,$dbuser,$dbpw,$dbhost;
+	mysql_connect($dbhost,$dbuser,$dbpw);
+	@mysql_select_db($dbname) or die("(pingReminderCount() Unable to select database [$dbname])");
+	
+	$query="UPDATE system_reminder_count SET count=count+1;";
+	$result=mysql_query($query);
+	$query="SELECT * FROM system_reminder_count;";
+	$result=mysql_query($query);
+	$retval = mysql_result($result,0,"count");
+	//mysql_close();	
+	
+	return $retval;
+}
+
+
+function createReminder($user,$datetime,$message)
+{
+	global $dbname,$dbuser,$dbpw,$dbhost;	
+	
+	$userinf = GetUserHash($user);
+	$bot = $userinf{'bot'};
+	
+	mysql_connect($dbhost,$dbuser,$dbpw);
+	@mysql_select_db($dbname) or die("(createReminder.php() Unable to select database [$dbname])");
+	
+	$remid = pingReminderCount();
+	$datetime = mysql_escape_string($datetime);
+	$message = mysql_escape_string($message);
+		
+	$newquery = "INSERT INTO system_reminders (bot,user,datetime,msg,id) ".
+	$newquery.= " VALUES ('$bot','$user','$datetime','$message','$remid')";
+	$link = mysql_query($newquery);
+	//echo mysql_errno($link) . ": " . mysql_error($link) . "\n";
+	mysql_close();		
+
+	return TRUE;
+}
+
+
+function createUser($userid,$password,$email,$botname,$timezone,$firstname,$lastname,$ct_hash)
+{
+	global $dbname,$dbuser,$dbpw,$dbhost,$defaut_plan;
+	mysql_connect($dbhost,$dbuser,$dbpw);
+	@mysql_select_db($dbname) or die("(createUser.php() Unable to select database [$dbname])");	
+	
+	$encpass = md5($password);
+	$query = "INSERT INTO system_users (id,email,bot,timezone,password,firstname,surname,plan)".
+	" VALUES ('$userid','$email','$botname','$timezone','$encpass','$firstname','$lastname','$default_plan')";
+	$link = mysql_query($query);
+	
+	$contacts = array( 'first','second', 'third' );
+	
+	$prio = 0;
+	foreach ($contacts as $con)
+	{
+		$query = "INSERT INTO system_contacts (userid,service,login,priority) ".
+		"VALUES ('$userid','".$ct_hash{$con}{service}."','".$ct_hash{$con}{login}."','$prio'); ";
+		$link = mysql_query($query);
+		$prio++;
+	}
+	
+	mysql_close();	
+	return 0;
+}
+
+
+function updateUser($userid,$email,$timezone,$firstname,$lastname,$ct_hash)
+{
+	global $dbname,$dbuser,$dbpw,$dbhost,$prio_array;
+	mysql_connect($dbhost,$dbuser,$dbpw);
+	@mysql_select_db($dbname) or die("(updateUser.php() Unable to select database [$dbname])");	
+	
+	$query = "UPDATE system_users SET email='$email',timezone='$timezone',".
+			"firstname='$firstname',surname='$lastname' WHERE (id = '$userid');";
+	$link = mysql_query($query);
+
+	$prio = 0;
+	foreach ($prio_array as $con)
+	{
+		$query = "UPDATE system_contacts SET login='".$ct_hash{$con}{login}."',service='".
+				$ct_hash{$con}{service}."' WHERE (userid = '$userid') AND (priority='$prio');";
+				
+		$link = mysql_query($query);	
+		$prio++;		
+	}	
+
+	mysql_close();
+}
+
+
+function cancelReminder($remid)
+{
+	global $dbname,$dbuser,$dbpw,$dbhost;
+	mysql_connect($dbhost,$dbuser,$dbpw);
+	@mysql_select_db($dbname) or die("(cancelReminder.php() Unable to select database [$dbname])");	
+	$query="UPDATE system_reminders SET delivered = '1' WHERE (id = '$remid');";	
+	$link = mysql_query($query);
+	mysql_close();			
+}
+
+function getPendingUserReminder($remid)
+{
+	global $dbname,$dbuser,$dbpw,$dbhost;
+	mysql_connect($dbhost,$dbuser,$dbpw);
+	@mysql_select_db($dbname) or die("(getReminder.php() Unable to select database [$dbname])");	
+	$query="SELECT * FROM system_reminders WHERE (delivered = '0') AND (id = '$remid') AND (user = '".$_COOKIE[username]."');";
+	$result = mysql_query($query);
+	
+	$retval{'id'} = mysql_result($result,0,"id");
+	$retval{'user'} = mysql_result($result,0,"user");
+	$retval{'datetime'} = mysql_result($result,0,"datetime");
+	$retval{'msg'} = mysql_result($result,0,"msg");		
+
+	mysql_close();			
+	return $retval;
+}
+
+function getContactHash($userid)
+{
+	global $dbname,$dbuser,$dbpw,$dbhost,$prio_array;
+	mysql_connect($dbhost,$dbuser,$dbpw);
+	@mysql_select_db($dbname) or die("(getContactHash.php() Unable to select database [$dbname])");	
+	$query="SELECT * FROM system_contacts WHERE (userid = '$userid');";
+	$result = mysql_query($query);
+
+	$retval{'userid'} = mysql_result($result,0,"userid");
+	
+	$count = 0;
+	foreach ($prio_array as $prio)
+	{
+		$order = mysql_result($result,$count,"priority");
+		$retval{$prio_array[$order]}{service} = mysql_result($result,$count,'service');
+		$retval{$prio_array[$order]}{login} = mysql_result($result,$count,'login');
+		$count++;
+	}
+	
+	mysql_close();			
+	return $retval;
+}
+
+function editReminder($remid,$datetime,$message)
+{
+	global $dbname,$dbuser,$dbpw,$dbhost;
+	
+	$message = mysql_escape_string($message);
+	$datetime = mysql_escape_string($datetime);
+	
+	mysql_connect($dbhost,$dbuser,$dbpw);
+	@mysql_select_db($dbname) or die("(saveReminder.php() Unable to select database [$dbname])");	
+	
+	$query="UPDATE system_reminders SET datetime = '$datetime', msg = '$message' WHERE (delivered = '0') AND (id = '$remid') AND (user = '".$_COOKIE[username]."');";
+	$result = mysql_query($query);
+	mysql_close();
+	
+	return $retval;
+}
+
+
+function getPlanHash($planid)
+{
+	global $dbname,$dbuser,$dbpw,$dbhost;
+		
+	mysql_connect($dbhost,$dbuser,$dbpw);
+	@mysql_select_db($dbname) or die("(GetBotHash() Unable to select database [$dbname])");
+	
+	$query="SELECT * FROM system_subscribe_plans WHERE (id='$planid');";
+	
+	$result=mysql_query($query);
+	$num=mysql_numrows($result);	
+	
+	if ($num == 0)
+	{
+		mysql_close();
+		return 0;
+	}
+	
+	$retval{'id'} = mysql_result($result,0,"id");
+	$retval{'allow_repeat_reminders'} = mysql_result($result,0,"allow_repeat_reminders");
+	$retval{'num_reminders'} = mysql_result($result,0,"num_reminders");
+	$retval{'num_repeat_reminders'} = mysql_result($result,0,"num_repeat_reminders");
+	
+	mysql_close();
+	return $retval;
+}
+
+?>

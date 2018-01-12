@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="ResMimeType">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="Version">
+		<value>1.0.0.0</value>
+	</resheader>
+	<resheader name="Reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="Writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="unknown_user">
+		<value><![CDATA[Hello, I am a RemindMe bot. With RemindMe you can send reminders to yourself or your friends through instant messages and email! Please go to http://www.remindme.cc for more information.
+
+If you have already registered, please be patient. When I receive your registration info I will let you know!]]></value>
+	</data>
+	<data name="known_user_default">
+		<value>Hello %u, please type '/help' or '-help' for information on how to use RemindMe.</value>
+	</data>
+	<data name="reminder_scheduled">
+		<value>Reminder ID %r scheduled for: %d (%t)</value>
+	</data>
+	<data name="mpserver_request_error">
+		<value>There has been an internal error, please notify support@remindme.cc with the following error code: (0x01)</value>
+	</data>
+	<data name="mpserver_response_error">
+		<value>There has been an internal error,  please notify support@remindme.cc wth the following error code: (0x02)</value>
+	</data>
+	<data name="mpserver_parser_error_1">
+		<value>The date/time you have specified has already passed. Please try again.</value>
+	</data>
+	<data name="mpserver_parser_error_2">
+		<value>I did not understand the date/time you specified. Please try again. If the problem persists, please contact support@remindme.cc</value>
+	</data>
+	<data name="mpserver_parser_error_3">
+		<value>You did not specify a date/time. Please try again. If the problem persists, please contact support@remindme.cc</value>
+	</data>
+	<data name="mpserver_parser_error_4">
+		<value>You did not specify a message as part of your reminder. Please try again. If the problem persists, please contact support@remindme.cc</value>
+	</data>
+	<data name="mpserver_parser_error_5">
+		<!--<value>RemindMe did not understand the person for whom you are creating the reminder. Please try again. If the problem persists, please contact support@remindme.cc</value>-->
+		<value>I did not understand you, please try again. If the problem persists, please contact support@remindme.cc</value>
+	</data>
+	<data name="mpserver_parser_error_6">
+		<value>Please use "to", "that" or "about" when sending me your reminders. Example: remind me at 10pm about the meeting in conference room 2b</value>
+	</data>
+	<data name="create_reminder_failed">
+		<value>There has been an internal error,  please notify support@remindme.cc with the following error code: (0x03)</value>
+	</data>
+	<data name="max_reminder_error">
+		<value>I'm sorry but you cannot create any more reminders. You are allowed a total of %d reminders. You can log into www.remindme.cc and delete some reminders.</value>
+	</data>
+	<data name="cancel_reminder_conf">
+		<value>Reminder ID %d has been cancelled.</value>
+	</data>
+	<data name="reminder_info_IM">
+		<value><![CDATA[Details for reminder %d
+
+Creator: %a
+Delivery Date: %b
+Message: %c]]></value>
+	</data>
+</root>

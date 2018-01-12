@@ -1,0 +1,209 @@
+/*
+-----------------------------------------------------------------------------
+ $Workfile: remindme-style.css $ $Revision: 1.5 $ $Author: addy $ 
+ $Date: 2009/07/17 22:24:29 $
+-----------------------------------------------------------------------------
+*/
+
+html,body 
+{
+	margin:0; 
+	padding:0; 
+	font:12px verdana; 
+	background-color:red; /* DEV ONLY */
+	/*background-color:yellow; /* QA ONLY */
+	/*background-color:white; /* PROD ONLY */
+}	
+
+.button
+{
+	background-color: white;
+	color: white;
+}
+
+.button a:visited,a:link,a:active
+{
+	background-color: white;
+	color: white;
+}
+
+a.standardlink:visited,a.standardlink:link,a.standardlink:active
+{
+	color: blue;
+}
+
+a.smalllink:visited,a.smalllink:link,a.smalllink:active
+{
+	color: blue;
+	font: bold 8pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+}
+
+.tcat
+{
+	color: #000000;
+	font: bold 12pt verdana, geneva, lucida, 'lucida grande', arial, helvetica, sans-serif;
+
+}
+
+
+
+#outerContainer 
+{ 
+	margin: 0px auto;
+	padding: 10px 0px 10px 0px;
+	min-width: 965px;
+	max-width: 965px;
+	/*min-width: 760px; 
+	max-width: 760px; 
+	min-height: 400px; */
+}
+
+#innerContainer
+{
+	padding: 0px;
+	margin: 0px;
+}
+
+#toptable
+{
+	background-image: url(../images/top-background.png); 
+	background-repeat: no-repeat;
+	
+	display: block;
+	height: 87px;
+}
+
+#middletable
+{
+	padding: 10px 30px 10px 30px; 
+	background-image: url(../images/middle-background.png); 
+}
+
+#bottomtable
+{
+	background-repeat: no-repeat;
+	background-image: url(../images/bottom-background.png); 
+}
+
+.menuItems
+{
+	text-decoration: none;
+	
+	text-align: left;
+	color: #ffffff;
+	font-weight: bold;
+	background-color:#666699;
+	padding: 5px;
+}
+
+.menuItems a
+{
+	text-decoration: none;
+	
+	text-align: left;
+	color: #ffffff;
+	font-weight: bold;
+	background-color:#666699;
+	padding: 5px;
+}
+
+
+.menuItems a:hover
+{
+	text-decoration: underline;
+}
+
+#menuLoginButton
+{
+	text-align: right;
+	color: #ffffff;
+	font-weight: bold;
+	background-color: #666699;
+	padding: 5px;
+}
+
+#sideMenu
+{
+	vertical-align: top;
+	width: 125px;
+}
+
+#mainContent
+{
+	vertical-align: top;
+	width:100%;
+}
+
+.largeText
+{
+	font-weight: bold;
+	font-size: 15px;
+}
+
+#sampleBox
+{
+	color: #38295F; 
+	background-color: #E4E2E2;
+	list-style-position:inside;
+	padding-left: 5px;
+}
+
+.errorinfo
+{
+	border:  1px solid red;
+	color: red;
+	font-weight: bold;
+	
+	padding-left: 30px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 5px;
+	
+	vertical-align: middle;
+	
+	background-image:url('/images/warning-icon.png');
+	background-repeat: no-repeat;
+	background-position: center left;
+	
+}
+
+form.login_form
+{
+  position: absolute;
+  visibility: hidden;
+
+  border:  1px solid black;
+  padding: 0px 5px 0px 5px;
+
+  background: #CCCCCC;
+  height: 90px;
+  width: 225px;
+}
+
+/* Used in Reminder list */
+.box3 
+{
+	border-style:solid;
+	border-width:5px;
+	background-color: #F4F4F4; 
+	text-decoration: none; 
+	font-family: verdana, Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px
+}
+.box4 
+{
+	border: 1px solid black; 
+	padding: 3px;
+	background-color: #FFFFFF; 
+	text-decoration: none; 
+	font-family: verdana, Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px
+}
+.rowY 
+{
+	background-color: #FFC; 
+	text-decoration: none; 
+	font-family: verdana, Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px
+}
+/* /Used in Reminder list */

@@ -1,0 +1,76 @@
+<bots>
+	<bot name="tester1">
+		<connections>
+			<connection type="aim">
+				<login>i3e9</login>
+				<password></password>
+			</connection>
+			
+			<connection type="msn">
+				<login>reminderbot@hotmail.com</login>
+				<password></password>
+			</connection>
+			
+			<connection type="icq">
+				<login>253501542</login>
+				<password></password>
+			</connection>
+		</connections>
+		
+		<user-file>ciqo-users.xml</user-file>
+	</bot>
+
+	<bot name="tester2">
+		<connections>
+			<connection type="aim">
+				<login>lllllliiilllliii</login>
+				<password></password>
+			</connection>
+			<connection type="msn">
+				<login>aclaure@zethon.net</login>
+				<password></password>
+			</connection>
+			<connection type="icq">
+				<login>321887966</login>
+				<password></password>
+			</connection>			
+		</connections>
+		<user-file>ciqo-users.xml</user-file>
+	</bot>
+
+	<bot name="0001">
+		<connections>
+			<connection type="aim">
+				<login>RemindMeBot0001</login>
+				<password></password>
+			</connection>
+			<connection type="msn">
+				<login>zethon@hotmail.com</login>
+				<password></password>
+			</connection>
+			<connection type="icq">
+				<login>250651641</login>
+				<password></password>
+			</connection>			
+		</connections>
+		<user-file>ciqo-users.xml</user-file>
+	</bot>
+	
+	<bot name="ciqo">
+		<connections>
+			<connection type="aim">
+				<login>ciqo</login>
+				<password>kiddie</password>
+			</connection>
+			<connection type="msn">
+				<login>zethon@hotmail.com</login>
+				<password></password>
+			</connection>
+			<connection type="icq">
+				<login>250651641</login>
+				<password></password>
+			</connection>			
+		</connections>
+		<user-file>ciqo-users.xml</user-file>
+	</bot>	
+</bots>

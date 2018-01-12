@@ -1,0 +1,4 @@
+LIBRARY	"yahoodll"
+
+EXPORTS
+	GetPasswordEncrypt

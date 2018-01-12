@@ -1,0 +1,56 @@
+/*
+-----------------------------------------------------------------------------
+ $Workfile: remindme-style.css $ $Revision: 1.5 $ $Author: addy $ 
+ $Date: 2009/07/17 22:24:29 $
+-----------------------------------------------------------------------------
+*/
+
+
+.tpop, .apop {
+	/*width: 50%;*/
+}
+.tpop {
+/*	margin: 0.4em;
+	background-color: #ccc;*/
+	cursor: pointer;
+}
+#grey1 
+{
+	/*float: left;
+	argin-right: 0;*/
+}
+#grey2 {
+	float: left;
+	margin-left: 0;
+}
+.apop {
+	position: absolute;
+	background-color: #666699;
+	visibility: hidden;
+	top: 0;
+	left: 0;
+}
+.tpop div, .apop div {
+/*	padding: 0.4em;
+	border: 4px solid;*/
+}
+.tpop div 
+{
+	color: blue;
+	text-decoration: underline; 
+	/*border-color: #333;*/
+}
+.apop div 
+{
+	border: 4px solid;
+	border-color: #444477;
+	padding: 0.4em;
+	color: white;
+}
+#wrap {
+	/*margin: 0 5em;*/
+	/*background-color: #dfd;*/
+	/*padding: 0.4em;*/
+	/*text-align: left;*/
+}
+

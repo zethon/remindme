@@ -1,0 +1,135 @@
+<users>
+	<user id="zethon_user">
+		<class>admin</class>
+		<email>zethon@zethon.net</email>
+		<contact-order>aim,msn</contact-order>
+		<names>
+			<screen-name type="aim">zethon</screen-name >
+			<screen-name type="msn">zethon@hotmail.com</screen-name>
+		</names> 
+	</user>
+	
+	<user id="aclaure8">
+		<class>admin</class>
+		<email>aclaure8@zethon.net</email>
+		<contact-order>aim,msn</contact-order>
+		<names>
+			<screen-name type="aim">aclaure8</screen-name >
+			<screen-name type="msn">aclaure@zethon.net</screen-name>
+		</names> 
+	</user>
+
+	<user id="addytest">
+		<class>user</class>
+		<email>aclaure@zethon.net</email>
+		<contact-order>icq,aim</contact-order>
+		<names>
+			<screen-name type="aim">grrrrrrrkitty</screen-name>
+			<screen-name type="icq">214415420</screen-name>
+		</names> 
+	</user>
+	
+	<user id="abrown">
+		<class>user</class>
+		<email>abrown@zethon.net</email>
+		<contact-order>aim</contact-order>
+		<names>
+			<screen-name type="aim">dirtorsoil</screen-name>
+		</names> 
+	</user>
+
+	<user id="tom">
+		<class>user</class>
+		<email>tom@thechicagofiles.com</email>
+		<contact-order>aim</contact-order>
+		<names>
+			<screen-name type="aim">digityzethis</screen-name>
+		</names> 
+	</user>	
+
+	<user id="greg">
+		<class>user</class>
+		<email>greg@alomafilms.com</email>
+		<contact-order>aim</contact-order>
+		<names>
+			<screen-name type="aim">greg750</screen-name>
+		</names> 
+	</user>	
+
+	<user id="greg2">
+		<class>user</class>
+		<email>greg@alomafilms.com</email>
+		<contact-order>aim</contact-order>
+		<names>
+			<screen-name type="aim">stinkygrinch</screen-name>
+		</names> 
+	</user>	
+
+	<user id="gabe">
+		<class>user</class>
+		<email>greg@alomafilms.com</email>
+		<contact-order>aim</contact-order>
+		<names>
+			<screen-name type="aim">fireravenv</screen-name>
+		</names> 
+	</user>	
+
+	<user id="rebecca">
+		<class>user</class>
+		<email>grebecca@somedomain.com</email>
+		<contact-order>aim,icq,msn</contact-order>
+		<names>
+			<screen-name type="aim">ulbekis</screen-name>
+			<screen-name type="msn">ulbekis@hotmail.com</screen-name>
+			<screen-name type="icq">15543553</screen-name>
+		</names> 
+	</user>	
+
+	<user id="sean">
+		<class>user</class>
+		<email>sean@somedomain.com</email>
+		<contact-order>aim</contact-order>
+		<names>
+			<screen-name type="aim">adhonus</screen-name>
+		</names> 
+	</user>	
+
+	<user id="paul">
+		<class>user</class>
+		<email>pgschneiderqa@aol.com</email>
+		<contact-order>aim</contact-order>
+		<names>
+			<screen-name type="aim">pgschneiderqa</screen-name>
+		</names> 
+	</user>	
+
+	<user id="jennifer">
+		<class>user</class>
+		<email>GennyBean20@aol.com</email>
+		<contact-order>aim</contact-order>
+		<names>
+			<screen-name type="aim">gennybean20</screen-name>
+		</names> 
+	</user>		
+	frekleface freek
+
+	<user id="michele">
+		<class>user</class>
+		<email>michele</email>
+		<contact-order>aim</contact-order>
+		<names>
+			<screen-name type="aim">freklefacefreek</screen-name>
+		</names> 
+	</user>		
+
+	<user id="tarp">
+		<class>user</class>
+		<email>michele</email>
+		<contact-order>aim,msn</contact-order>
+		<names>
+			<screen-name type="aim">t4rp</screen-name>
+			<screen-name type="msn">tarp240@hotmail.com</screen-name>
+		</names> 
+	</user>		
+
+</users>

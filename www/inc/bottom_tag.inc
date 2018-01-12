@@ -1,0 +1,3 @@
+<tr><td class=plaintext align=center>This Web site is in no way affiliated with or endorsed by America Online, Inc. or ICQ, Inc. The marks AOL and AIM are registered trademarks of America Online, Inc.; the marks Instant Messenger and AOL Instant Messenger are service marks of America Online, Inc.; the mark ICQ is a registered mark of ICQ, Inc.</td></tr>
+<tr><td>&nbsp;</td></tr>
+<tr><td>&nbsp;</td></tr>

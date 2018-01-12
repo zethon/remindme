@@ -1,0 +1,238 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1A780A0E-8843-49FA-B3B1-E759382EDDC5}</ProjectGuid>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>server</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>server</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <SccAuxPath>
+    </SccAuxPath>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AIMLBot, Version=1.0.3252.20232, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="dotICQ">
+      <Name>dotICQ</Name>
+      <HintPath>..\dotICQ\bin\Debug\dotICQ.dll</HintPath>
+    </Reference>
+    <Reference Include="DotOSCAR">
+      <Name>DotOSCAR</Name>
+      <HintPath>..\dotOscar\bin\Debug\DotOSCAR.dll</HintPath>
+    </Reference>
+    <Reference Include="dotTOC2">
+      <Name>dotTOC2</Name>
+      <HintPath>..\dotTOC2\bin\Debug\dotTOC2.dll</HintPath>
+    </Reference>
+    <Reference Include="dotYahoo">
+      <Name>dotYahoo</Name>
+      <HintPath>..\dotYahoo\bin\Debug\dotYahoo.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL" />
+    <Reference Include="MsgParser">
+      <Name>MsgParser</Name>
+      <HintPath>..\MsgParser\bin\Debug\MsgParser.dll</HintPath>
+    </Reference>
+    <Reference Include="MySQLDriverCS">
+      <Name>MySQLDriverCS</Name>
+      <HintPath>..\modules\MySQLDriverCS.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="xConsole">
+      <Name>xConsole</Name>
+      <HintPath>..\modules\xConsole.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Arguments.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BotDaemon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConnectionManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Connections.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RMCommandParser.cs" />
+    <Compile Include="RMConsoleCommands.cs" />
+    <Compile Include="DataManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DeliveryManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dotEmail.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HelpManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Log.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReminderManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RepeatPattern.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configs.cs" />
+    <Compile Include="Smtp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="..\..\..\app\bots.xml">
+      <Link>bots.xml</Link>
+    </Content>
+    <Content Include="App.ico" />
+    <Content Include="changelog.txt" />
+    <Content Include="mpserver.xml" />
+    <EmbeddedResource Include="botMsgs.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Users\Addy\Desktop\JabberNet-2.1.0.710\2005-jabber-net.csproj">
+      <Project>{6CAE854A-F202-4D2B-B10E-E8D8E81E5EF5}</Project>
+      <Name>2005-jabber-net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MSNClientController\MSNClientController.csproj">
+      <Project>{293EB4A7-35D0-461F-A8A4-380A2E7ED50D}</Project>
+      <Name>MSNClientController</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>cd $(ProjectDir)
+perl pushver.pl $(ConfigurationName)</PreBuildEvent>
+    <PostBuildEvent>if "$(ConfigurationName)"=="Release" copy "$(TargetPath)" "$(SolutionDir)\dist"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

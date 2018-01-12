@@ -1,0 +1,20 @@
+01 Feb 05
+* removed unneeded calls to the mysql db
+
+25 Jan 05
+* added some functionality to the server console, list users <service> and list users online
+* removed the "away" exception
+
+24 Jan 05
+* fixed bug with ReminderTimer being turned off
+
+23 Jan 05
+* fixed bug with pop3 object only working once
+* added OnError handler to connection objects
+* added limits to number of reminders users can create (according to plan)
+
+04 Sep 05
+* v0.0.1.11236 - last version WITHOUT ad functionality
+
+15 Sep 05
+* added functionality to postpone the delivery of admin welcome reminders if the user has yet to be loaded into the bot
