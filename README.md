@@ -1,7 +1,7 @@
 # RemindMe 
 <img align="right" src="https://github.com/zethon/remindme/blob/master/www/images/logo2.gif">
 
-RemindMe was a service/website (www.remindme.cc) I launch in 2002 and eventually took down around 2007. 
+RemindMe was a service launched in 2002. The site went live at www.remindme.cc and used IM bots to communicate with users.
 
 The idea was that users could create/edit/receive reminders through instant messaging. In other words, someone could send an IM to a bot such as:
 
@@ -27,6 +27,6 @@ I rewrote the backend in C# using a locally hosted Perl REST service (`/server`)
 
 ## The End
 
-RemindMe saw a little bit of success with about 100 reminders per day being delivered at its peak. However it was problematic and delivered maybe 70% to 80% of its reminders. I eventually shut the site down and let the domain expire since I had a full time job and was a student.
+RemindMe saw a little bit of success with about 100 reminders per day being delivered at its peak. However it was problematic and delivered maybe 70% to 80% of its reminders. The service was shut down in 2007.
 
 The code is presented here for archival puporses.
